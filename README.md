@@ -1,5 +1,8 @@
 # Yii LessPhp
 
+[![Latest Stable Version](https://poser.pugx.org/dotzero/yii-less/version)](https://packagist.org/packages/dotzero/yii-less)
+[![License](https://poser.pugx.org/dotzero/yii-less/license)](https://packagist.org/packages/dotzero/yii-less)
+
 **ELessPhp** is an extension for the **Yii PHP framework** that allows developers to compile LESS files into CSS on the fly, using the [LessPhp](http://leafo.net/lessphp/) compiler.
 
 ## Requirements:

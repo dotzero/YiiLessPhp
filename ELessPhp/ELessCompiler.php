@@ -2,12 +2,14 @@
 /**
  * ELessCompiler class file.
  *
- * @package YiiLessPhp
- * @author dZ <mail@dotzero.ru>
- * @link http://www.dotzero.ru
- * @link https://github.com/dotzero/YiiLessPhp
- * @license MIT
- * @version 1.0 (24-nov-2013)
+ * @package ELessCompiler
+ * @version 1.0
+ * @author dotzero <mail@dotzero.ru>
+ * @link http://www.dotzero.ru/
+ * @link https://github.com/dotzero/yii-less
+ *
+ * For the full copyright and license information, please view the LICENSE
+ * file that was distributed with this source code.
  */
 
 /**
