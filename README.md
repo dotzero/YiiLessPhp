@@ -5,35 +5,49 @@
 
 **ELessPhp** is an extension for the **Yii PHP framework** that allows developers to compile LESS files into CSS on the fly, using the [LessPhp](http://leafo.net/lessphp/) compiler.
 
-## Requirements:
+## Requirements
 
-Yii Framework 1.1.0 or later
+- [Yii Framework](https://github.com/yiisoft/yii) 1.1.14 or above
+- [Composer](http://getcomposer.org/doc/)
 
-## Installation:
+## Install
 
-- Extract the release folder `ELessPhp` under `protected/extensions`
-- Download and extract [LessPhp](http://leafo.net/lessphp/) under 'protected/vendor'
-- Add the following to your **config file** `preload` section:
+### Via composer:
 
-```php
-<?php
-    //...
-    'preload' => array(
-        'less',
-    ),
+```bash
+$ composer require dotzero/yii-less
 ```
 
-- Add the following to your **config file** `components` section:
+- Add vendor path to your configuration file, attach component and set properties:
 
 ```php
-<?php
+'aliases' => array(
+    ...
+    'vendor' => realpath(__DIR__ . '/../../vendor'),
+),
+'components' => array(
+    ...
     'less' => array(
-        'class' => 'ext.ELessPhp.ELessCompiler',
-        'lessphpDir' => 'application.vendors.lessphp', // Path alias of lessc.inc.php directory
+        'class' => 'vendor.dotzero.yii-less.ELessCompiler',
+        'lessphpDir' => 'vendor.leafo.lessphp', // Path alias of lessc.inc.php directory
         'forceCompile' => false, // Force recompile LESS into CSS every initializes the component
         'files' => array( // Files to compile (relative from your base path)
             'css/style.less' => 'css/style.css',
             'css/userstyle.less' => 'css/userstyle.css',
         ),
     ),
+),
 ```
+
+- Add the following to your config file `preload` section:
+
+```php
+'preload' => array(
+    ...
+    'less',
+),
+```
+
+## License
+
+Licensed under the MIT license: http://www.opensource.org/licenses/mit-license.php
