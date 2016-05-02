@@ -17,35 +17,40 @@
  * on the fly, using the LessPhp compiler.
  *
  * Requirements:
- * Yii Framework 1.1.0 or later
+ * - Yii Framework 1.1.14 or above
  *
  * Installation:
- * - Extract ELessPhp folder under 'protected/extensions'
- * - Download and extract LessPhp (http://leafo.net/lessphp/) under 'protected/vendor'
- * - Add the following to your config file 'components' section:
  *
- *  // Add extension to preload section
- *  'preload' => array(
- *      'less',
- *  ),
- *
- *  // Add extension to components section
- *  'less' => array(
- *      'class' => 'ext.ELessPhp.ELessCompiler',
- *      'lessphpDir' => 'application.vendors.lessphp',
- *      'forceCompile' => false,
- *      'files' => array(
- *          'css/style.less' => 'css/style.css',
- *          'css/userstyle.less' => 'css/userstyle.css'
+ * - Add vendor path to your configuration file, attach component and set properties:
+ * 'aliases' => array(
+ *      ...
+ *      'vendor' => realpath(__DIR__ . '/../../vendor'),
+ * ),
+ * 'components' => array(
+ *      ...
+ *      'less' => array(
+ *          'class' => 'vendor.dotzero.yii-less.ELessCompiler',
+ *          'lessphpDir' => 'vendor.leafo.lessphp', // Path alias of lessc.inc.php directory
+ *          'forceCompile' => false, // Force recompile LESS into CSS every initializes the component
+ *          'files' => array( // Files to compile (relative from your base path)
+ *              'css/style.less' => 'css/style.css',
+ *              'css/userstyle.less' => 'css/userstyle.css',
+ *          ),
  *      ),
- *  ),
+ * ),
+ *
+ * - Add the following to your config file `preload` section:
+ * 'preload' => array(
+ *      ...
+ *      'less',
+ * ),
  */
 class ELessCompiler extends CApplicationComponent
 {
     /**
      * @var string Path alias of the directory where the lessc.inc.php file can be found
      */
-    public $lessphpDir = 'application.vendors.lessphp';
+    public $lessphpDir = 'vendor.leafo.lessphp';
 
     /**
      * @var bool Force recompile LESS into CSS every initializes the component
@@ -111,8 +116,6 @@ class ELessCompiler extends CApplicationComponent
                     ));
             }
         }
-
-
     }
 
     /**
