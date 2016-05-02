@@ -2,7 +2,7 @@
     "name": "dotzero/yii-less",
     "description": "The Yii LessPhp extension that allows developers to compile LESS files into CSS on the fly, using the LessPhp compiler",
     "license": "MIT",
-    "keywords": ["yii", "extension", "behavior"],
+    "keywords": ["yii", "extension", "less"],
     "authors": [
         {
             "name": "dotzero",
